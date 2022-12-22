@@ -1,0 +1,1 @@
+qemu-system-aarch64 -m 2048 -cpu cortex-a72 -smp 4 -M virt -nographic -bios ./QEMU_EFI.fd -drive if=none,file=./debian-10.13.3-20221010-openstack-arm64.qcow2,id=hd0 -device virtio-blk-device,drive=hd0 -drive file=./user-data.img,format=raw -device virtio-net-device,netdev=net0 -netdev user,hostfwd=tcp:127.0.0.1:2264-:22,id=net0
